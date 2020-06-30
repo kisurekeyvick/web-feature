@@ -86,6 +86,7 @@
     ]
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.13.0+4.12.20",
     "@types/axios-mock-adapter": "^1.10.0",
     "@types/jest": "^26.0.3",
     "@types/lodash": "^4.14.157",
@@ -106,6 +107,7 @@
     "lodash": "^4.17.15",
     "mockjs": "^1.1.0",
     "node-sass": "^4.14.1",
+    "react-hot-loader": "^4.12.21",
     "react-loadable": "^5.5.0",
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",

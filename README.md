@@ -40,5 +40,30 @@
         document.getElementById('root')
     );
 ```
+### 配置路径别名
+``` js
+    /* tsconfig.json部分 */
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+
+    /* webpack.config.js */
+    alias: {
+        '@': path.resolve(__dirname, '../src'),
+        // Support React Native Web 
+        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+        'react-native': 'react-native-web',
+        // Allows for better profiling with ReactDevTools
+        ...(isEnvProductionProfile && {
+          'react-dom$': 'react-dom/profiling',
+          'scheduler/tracing': 'scheduler/tracing-profiling',
+        }),
+        ...(modules.webpackAliases || {}),
+    }
+
+    /* import url @代表src*/
+    import * from '@/....'
+```
 
     
