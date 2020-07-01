@@ -7,39 +7,39 @@
 
 ## 文件目录
 ```
-    ├── package.json  
-    ├── src 
-    │   ├── assets
-    │       ├── img
-    │
-    │   ├── components
-    │   ├── containers
-    │   ├── layouts
-    │   ├── store
-    │   ├── utils
-    │
-    │── .gitignore
-    │── README.md 
+├── package.json  
+├── src 
+│   ├── assets
+│       ├── img
+│
+│   ├── components
+│   ├── containers
+│   ├── layouts
+│   ├── store
+│   ├── utils
+│
+│── .gitignore
+│── README.md 
 ```
 
 ## 关于配置多人路由和模板
 - src/routes 文件夹 用于创建属于自己的路由, 文件文件夹命名例如：route-你自定义的名字
 - src/layouts 文件夹 用于创建属于自己的布局, 你只需要在User变量中添加相关的item就可以
 ``` js
-    export const User: IUserInfo[] = [
-        {
-            name: 'Kisure',
-            desc: '个人博客案例',
-            pic: KisurePic,
-            key: 1,
-            /* 代表跳转到你自己的首页 */
-            redirectToUrl: '/k/home',
-            /* 是模板的名字 */
-            layoutName: 'kisure',
-            /* 是模板本身 react组件 */
-            layout: KISURELAYOUT
-        }
-    ];
+export const User: IUserInfo[] = [
+    {
+        name: 'Kisure',
+        desc: '个人博客案例',
+        pic: KisurePic,
+        key: 1,
+        /* 代表跳转到你自己的首页 */
+        redirectToUrl: '/k/home',
+        /* 是模板的名字 */
+        layoutName: 'kisure',
+        /* 是模板本身 react组件 */
+        layout: KISURELAYOUT
+    }
+];
 ```
 
 ## 初始化
