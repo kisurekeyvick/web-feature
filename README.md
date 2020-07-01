@@ -13,6 +13,32 @@
     │── README.md 
 ```
 
+## 关于配置多人路由和模板
+``` js
+    /* 
+        src/routes 文件夹 用于创建属于自己的路由 
+        文件文件夹命名例如：route-你自定义的名字
+    */
+
+    /* src/layouts 文件夹 用于创建属于自己的布局 */
+    其中：index.config.ts 中需要配置你的布局，你只需要在User变量中添加相关的item就可以
+    layoutName      是模板的名字
+    layout          是模板本身
+    redirectToUrl   代表跳转到你自己的首页
+
+    export const User: IUserInfo[] = [
+        {
+            name: 'Kisure',
+            desc: '个人博客案例',
+            pic: KisurePic,
+            key: 1,
+            redirectToUrl: '/k/home',
+            layoutName: 'kisure',
+            layout: KISURELAYOUT
+        }
+    ];
+```
+
 ## 初始化
 ```
     npx create-react-app your-project-name --typescript
