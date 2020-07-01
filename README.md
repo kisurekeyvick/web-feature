@@ -44,55 +44,55 @@
 
 ## 初始化
 ```
-    npx create-react-app your-project-name --typescript
-    yarn add antd
-    yarn start
+npx create-react-app your-project-name --typescript
+yarn add antd
+yarn start
 ```
 ### 如果你yarn start以后报错提示说没有ts环境
 ```
-    添加如下命令：cnpm install --save typescript @types/node @types/react @types/react-dom @types/jest -D
+添加如下命令：cnpm install --save typescript @types/node @types/react @types/react-dom @types/jest -D
 ```
 ### 关于yarn start以后控制台报错 => react使用antd警告:Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance
 - [关于React.StrictMode官方解释](http://react.html.cn/docs/strict-mode.html)
 ```js
-    /* 找到index.tsx */
-    ReactDOM.render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
+/* 找到index.tsx */
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-    /* 修改成 */
-    ReactDOM.render(
-        <App />,
-        document.getElementById('root')
-    );
+/* 修改成 */
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
 ```
 ### 配置路径别名
 ``` js
-    /* tsconfig.json部分 */
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+/* tsconfig.json部分 */
+"baseUrl": "./",
+"paths": {
+    "@/*": ["src/*"]
+}
 
-    /* webpack.config.js */
-    alias: {
-        '@': path.resolve(__dirname, '../src'),
-        // Support React Native Web 
-        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-        'react-native': 'react-native-web',
-        // Allows for better profiling with ReactDevTools
-        ...(isEnvProductionProfile && {
-          'react-dom$': 'react-dom/profiling',
-          'scheduler/tracing': 'scheduler/tracing-profiling',
-        }),
-        ...(modules.webpackAliases || {}),
-    }
+/* webpack.config.js */
+alias: {
+    '@': path.resolve(__dirname, '../src'),
+    // Support React Native Web 
+    // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+    'react-native': 'react-native-web',
+    // Allows for better profiling with ReactDevTools
+    ...(isEnvProductionProfile && {
+        'react-dom$': 'react-dom/profiling',
+        'scheduler/tracing': 'scheduler/tracing-profiling',
+    }),
+    ...(modules.webpackAliases || {}),
+}
 
-    /* import url @代表src*/
-    import * from '@/....'
+/* import url @代表src*/
+import * from '@/....'
 ```
 
     
