@@ -42,7 +42,7 @@ const BaseLayout: React.FC = () => {
                     }
                 </div> : User.filter((person: IUserInfo) => person.layoutName === currentLayout).map((person: IUserInfo) => {
                     const Container: any = person.layout;
-                    return <div key={person.key}><Container/></div>;
+                    return <div style={{'height': '100%'}} key={person.key}><Container/></div>;
                 })
             }
         </div>

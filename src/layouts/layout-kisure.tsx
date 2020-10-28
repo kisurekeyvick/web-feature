@@ -7,7 +7,7 @@ import routes from '@/routes/route-kisure';
 
 const kisure: React.FC = () => {
     return (
-        <div className='kisure-layout'>
+        <div className='kisure-layout' style={{'height': '100%'}}>
             <Suspense fallback={<Loading />}>
                 <Switch>
                     {renderRoutes(routes)}
